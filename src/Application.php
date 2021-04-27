@@ -139,6 +139,15 @@ class Application extends BaseApplication
                 'username' => 'name',
                 '' => 'email',
                 'password' => 'password',
+            ]
+        ]);
+
+        $authenticationService->loadAuthenticator('Authentication.Session');
+        $authenticationService->loadAuthenticator('Authentication.Form', [
+            'fields' => [
+                'username' => 'name',
+                '' => 'email',
+                'password' => 'password'
             ],
             'loginUrl' => '/users/login'
         ]);
